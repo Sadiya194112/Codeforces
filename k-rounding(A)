@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+ll Lcm,i,sum;
+int main(){
+    ll n,k;
+    cin>>n>>k;
+    sum = 1;
+    for(i=1; i<=k; i++){
+        sum*=10;
+    }
+    Lcm = (n*sum)/__gcd(n,sum);
+    cout<<Lcm<<"\n";
+    return 0;
+}
