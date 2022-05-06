@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+void Soln(){
+    ll n;   cin>>n;
+    ll a[n+3];
+    for(int i=0; i<n; i++)  cin>>a[i];
+    ll op=0;
+    for(int i=n-2; i>=0; i--){
+        while(a[i]>=a[i+1]){
+            a[i]/=2;
+            op++;
+            if(a[i]==0) break;
+        }
+    }
+    ll f=0;
+    for(int i=0; i<n-1; i++){
+        if(a[i]>=a[i+1])    f=1;
+    }
+    if(f)   cout<<-1<<endl;
+    else    cout<<op<<endl;
+}
+int main(){
+    int tc;
+    cin>>tc;
+    while(tc--){
+        Soln();
+    }
+    return 0;
+}
