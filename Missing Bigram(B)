@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define nl "\n"
+using namespace std;
+void Soln(){
+    int n;  cin>>n;
+    string s="";
+    bool flag = true;
+    for(int i=0; i<n-2; i++){
+        string c;   cin>>c;
+        int l=s.length();
+        if(l==0){
+            s+=c;
+        }
+        else if(s[l-1]==c[0]){         //s[l-1] = 2nd character of each string
+            s+=c[1];
+        }
+        else{
+            flag = false;
+            s+=c;
+        }
+    }
+    if(flag)    s+='a';
+    cout<<s<<nl;
+}
+int main(){
+    int tc;     cin>>tc;
+    while(tc--){
+        Soln();
+    }
+}
