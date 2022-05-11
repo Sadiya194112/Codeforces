@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define nl "\n"
+#define rep(i, c)   for(int i=0; i<(int)c; i++)
+using namespace std;
+
+void Solve(){
+   int n,m;      cin>>n>>m;
+   string a[n+3];
+   rep(i, n)    cin>>a[i];
+   int sum=0;
+   int mn = INT_MAX;
+   for(int i=0; i<n-1; i++){
+        for(int j=i+1; j<n; j++){
+            sum=0;
+            rep(k, m){
+                sum += abs(a[i][k]-a[j][k]);
+            }
+            mn = min(sum, mn);
+        }
+   }
+   cout<<mn<<nl;
+}
+int main(){
+    int tc;     cin>>tc;
+    while(tc--){
+        Solve();
+    }
+}
