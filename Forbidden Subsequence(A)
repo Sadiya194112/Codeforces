@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define nl "\n"
+using namespace std;
+void ac(){
+    string s,t;     cin>>s>>t;
+//    sort(s.begin(), s.end());
+    int l = s.size();
+    string st;
+    int a=0,b=0,c=0;
+    vector<int> v;
+    if(t=="abc"){
+        for(int i=0; i<t.size(); i++){
+            for(int j=0; j<l; j++){
+                if(find(s.begin(), s.end(), t[i])==s.end()){
+                    sort(s.begin(), s.end());
+                    cout<<s<<nl;
+                    return;
+                }
+            }
+        }
+        for(int i=0; i<l; i++){
+            if(s[i]=='a')   a++;
+            else if(s[i]=='b')  b++;
+            else if(s[i]=='c')  c++;
+            else{
+                v.push_back(s[i]);
+            }
+        }
+        sort(v.begin(), v.end());
+        for(int i=0; i<a; i++)  st+='a';
+        for(int i=0; i<c; i++)  st+='c';
+        for(int i=0; i<b; i++)  st+='b';
+        for(int i=0; i<v.size(); i++)   st+=v[i];
+ 
+        cout<<st<<nl;
+        return;
+    }
+    else{
+        sort(s.begin(), s.end());
+        cout<<s<<nl;
+        return;
+    }
+}
+int main(){
+    int tc;     cin>>tc;
+    while(tc--){
+        ac();
+    }
+ 
+}
