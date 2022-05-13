@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define rep(i, c)       for(int i=0; i<(int)c; i++)
+#define ll long long
+#define nl "\n"
+#define pb push_back
+using namespace std;
+
+ll n,a,b,c,d;
+
+void ac(){
+    int l1,r1,l2,r2;
+    cin>>l1>>r1>>l2>>r2;
+    a = min(l1,r1);
+    b = max(l1,r1);
+    c = min(l2,r2);
+    d = max(l2,r2);
+    int mx=max(a,c);
+    if(mx<=b && mx==c)   cout<<mx<<nl;
+    else if(mx>b)   cout<<mx+a<<nl;
+    else if(mx<=d && mx==a)  cout<<mx<<nl;
+    else if(mx>d)   cout<<mx+c<<nl;
+
+}
+int main(){
+    int tc;     cin>>tc;
+    while(tc--){
+        ac();
+    }
+    return 0;
+}
