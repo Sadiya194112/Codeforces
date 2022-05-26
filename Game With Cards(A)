@@ -1,0 +1,35 @@
+@Sadiya
+
+#include<bits/stdc++.h>
+#define nl "\n"
+using namespace std;
+
+void ac(){
+    int n;      cin>>n;
+    int a[n+3];
+    for(int i=1; i<=n; i++)   cin>>a[i];
+
+    int m;      cin>>m;
+    int b[m+3];
+    for(int i=1; i<=m; i++)   cin>>b[i];
+
+    sort(a+1, a+n+1);
+    sort(b+1, b+m+1);
+
+    if(a[n]>b[m]){
+        cout<<"Alice\nAlice\n";
+    }
+    else if(a[n]<b[m]){
+        cout<<"Bob\nBob\n";
+    }
+    else if(a[n]==b[m]){
+        cout<<"Alice\nBob\n";
+    }
+}
+int main(){
+    int tc;     cin>>tc;
+    while(tc--){
+        ac();
+    }
+    return 0;
+}
