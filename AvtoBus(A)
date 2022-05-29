@@ -1,0 +1,30 @@
+@Sadiya
+
+#include<bits/stdc++.h>
+#define ll long long
+#define nl "\n"
+using namespace std;
+
+void ac(){
+    ll n;       cin>>n;
+    ll mx,mn;
+    if(n<4 || n&1){
+        cout<<-1<<nl;
+        return;
+    }
+    mn = n/6;
+    mx = n/4;
+    if(n%6) mn++;
+    cout<<mn<<" "<<mx<<nl;
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int tc;     cin>>tc;
+    while(tc--){
+        ac();
+    }
+    return 0;
+}
