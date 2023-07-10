@@ -11,7 +11,7 @@ signed main(){
         for(i=1; i<=n; i++)     cin>>a[i];
         sort(a+1, a+n+1);
         reverse(a+1, a+n+1);
- 
+
         for(i=1; i<=n; i++){
             x = a[i];
             while(x>n || used[x]==true){
