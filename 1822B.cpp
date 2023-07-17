@@ -1,18 +1,14 @@
 #include<bits/stdc++.h>
 #define int long long
+#define endl "\n"
 using namespace std;
+int x,y;
 void ac(){
-    int n,i,c=0;    cin>>n;
-    int a[n];
-    for(i=0; i<n; i++){
-        cin>>a[i];
-    }
+    int n,i;    cin>>n;
+    int a[n+2]; for(i=0; i<n; i++)  cin>>a[i];
     sort(a, a+n);
-    reverse(a, a+n);
-
-    int x,y;
     x = a[0]*a[1];
-    y = a[n-1]*a[n-2];
+    y = a[n-2]*a[n-1];
     cout<<max(x,y)<<endl;
 }
 signed main(){
