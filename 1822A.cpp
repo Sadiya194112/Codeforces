@@ -1,35 +1,27 @@
 #include<bits/stdc++.h>
+#define int long long
 #define endl "\n"
 using namespace std;
+int mx,x,idx;
 void ac(){
-    int n,t,i;    cin>>n>>t;
-
-    int a[n+2],b[n+2],x,y;
-    for(i=0; i<n; i++)  cin>>a[i];
-    for(i=0; i<n; i++)  cin>>b[i];
-
-    vector<pair<int,int> > p;
-    int ind=-1;
+    int n,t,i;    cin>>n>>t; mx=0;
+    int a[n+2];     for(i=0; i<n; i++)  cin>>a[i];
+    int b[n+2];     for(i=0; i<n; i++)   cin>>b[i];
     for(i=0; i<n; i++){
-        if((a[i]+i)<=t){
-           x = b[i];
-           ind = i;
-           p.push_back({x,ind});
+        x = a[i];
+        if(a[i]<=t){
+            if(b[i]>mx) mx=b[i],idx=i;
         }
+        t--;
     }
-    if(ind==-1){
-        cout<<-1<<endl;
-        return;
-    }
-    sort(p.begin(), p.end());
-    reverse(p.begin(), p.end());
-
-    cout<<p[0].second+1<<endl;
+    if(i==n && mx==0)   cout<<-1<<endl;
+    else    cout<<idx+1<<endl;
 
 }
 signed main(){
-    int tc;     cin>>tc;
+    int tc; cin>>tc;
     while(tc--){
         ac();
     }
+    return 0;
 }
